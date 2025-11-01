@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Flight Booking Application</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Flight Booking Application</h1>
+  </header>
+
+  <main>
+    <!-- Authentication Forms -->
+    <section id="auth-section">
+      <form id="login-form">
+        <h2>Login</h2>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <button type="button" id="show-register">Register</button></p>
+      </form>
+
+      <form id="register-form" style="display:none">
+        <h2>Register</h2>
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Register</button>
+        <p>Already have an account? <button type="button" id="show-login">Login</button></p>
+      </form>
+    </section>
+
+    <!-- Search Flights Section -->
+    <section id="search-section" style="display:none">
+      <h2>Search Flights</h2>
+      <form id="search-form">
+        <input name="source" placeholder="Source (e.g., Delhi)" required />
+        <input name="destination" placeholder="Destination (e.g., Mumbai)" required />
+        <input type="date" name="date" required />
+        <button type="submit">Search</button>
+      </form>
+      <div id="flights-list"></div>
+    </section>
+
+    <!-- Bookings Section -->
+    <section id="bookings-section" style="display:none">
+      <h2>Your Bookings</h2>
+      <div id="bookings-list"></div>
+    </section>
+    <div id="booking-modal" class="modal" style="display:none">
+      <div class="modal-content">
+        <h3>Book Flight</h3>
+        <form id="book-form">
+          <input id="passenger_name" name="passenger_name" placeholder="Passenger Name" required/>
+          <input id="passenger_age" name="passenger_age" type="number" placeholder="Age" required/>
+          <input id="seats" name="seats" type="number" value="1" min="1" required/>
+          <input type="hidden" id="flight_id" name="flight_id"/>
+          <button type="submit">Confirm Booking</button>
+          <button type="button" id="close-book">Close</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>Welcome To Flight Booking</footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
